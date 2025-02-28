@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektra Waves Concert Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3 class="title">Elektra Waves Concert Ticket Booking</h3>
+    <br/>
+    <form onsubmit="return costCalculation();">
+        <table id="tickettable">
+            <tr><td colspan="2"><a href="#costchart" id="costchart_ref">View ticket cost chart</a></td></tr>
+            <tr><td colspan="2" class="title">Personal Details</td></tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" required></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <select required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="2" class="title">Ticket Details</td></tr>
+            <tr>
+                <td>No Of Tickets</td>
+                <td>
+                    <input type="range" id="noOfTickets" min="1" max="40" step="1" value="1" oninput="showValue(this.value)">
+                    <span id="ticketCount">1</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Ticket Type</td>
+                <td>
+                    <select id="ticketType" required>
+                        <option value="Floor">Floor</option>
+                        <option value="Balcony">Balcony</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Add Ons</td>
+                <td>
+                    <input type="checkbox" id="couponCode"> Coupon Code
+                    <input type="checkbox" id="refreshment"> Refreshment
+                </td>
+            </tr>
+            <tr>
+                <td>Coupon Code</td>
+                <td>
+                    <input type="text" id="cc" list="couponCodes">
+                    <datalist id="couponCodes">
+                        <option value="ELEKTRA20"></option>
+                        <option value="SIMBA20"></option>
+                    </datalist>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <div id="buttons">
+            <input type="submit" id="submit" value="CONFIRM BOOKING">
+            <input type="reset" id="clear" value="CLEAR">
+        </div>
+        <br/><br/>
+        <table id="costchart">
+            <caption class="title">Ticket Cost Chart</caption>
+            <tr>
+                <th>Ticket Type</th>
+                <th>Base Price</th>
+                <th>On Booking > 20 Tickets</th>
+                <th>On Applying Coupon Code</th>
+            </tr>
+            <tr>
+                <td>Floor</td>
+                <td>400</td>
+                <td>10% discount</td>
+                <td>2% discount</td>
+            </tr>
+            <tr>
+                <td>Balcony</td>
+                <td>500</td>
+                <td>10% discount</td>
+                <td>2% discount</td>
+            </tr>
+            <tfoot>
+                <tr>
+                    <td colspan="4">You must pay Rs.100 extra on choosing Refreshment</td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

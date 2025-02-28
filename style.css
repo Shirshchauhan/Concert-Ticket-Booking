@@ -1,0 +1,38 @@
+body {
+    opacity: 0.9;
+    background-image: url("istockphoto.jpg");
+    background-size: cover;
+    font-weight: bold;
+}
+
+h3.title, caption.title {
+    color: black;
+    font-weight: bold;
+    font-family: Verdana;
+    text-align: center;
+}
+
+#tickettable, #costchart {
+    margin: auto;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 2px solid black;
+    padding: 7px;
+    text-align: center;
+}
+
+#buttons {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#submit, #clear {
+    padding: 7px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    background: black;
+}
